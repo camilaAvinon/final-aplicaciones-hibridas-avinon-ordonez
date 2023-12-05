@@ -1,26 +1,24 @@
 import React from 'react'
 import { Link, useParams } from 'react-router-dom';
 
-const Form_delete = () => {
-  let {postId} = useParams()
-  console.log(postId)
+const Form_delete = (postId) => {
+  // let {postId} = useParams()
+  const id = postId.postId;
   let token = localStorage.getItem('token')
   const handlerSubmit = async (event) => {
     event.preventDefault()
     try {
-      const response = await fetch(`http://localhost:2026/blog/posts/${postId}`, {
+      const response = await fetch(`http://localhost:2026/blog/posts/${id}`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({postId, token})
+        body: JSON.stringify({id, token})
       })
       if (response.ok){
-        const data = await response.json();
+        const data = await response.json()
         const token = data.token
-        const userId = data.name
         localStorage.setItem("token", token)
-        localStorage.setItem("userId", userId)   
       }
     } catch(e){
       console.error(e);

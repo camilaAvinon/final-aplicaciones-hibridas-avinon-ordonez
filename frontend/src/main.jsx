@@ -38,7 +38,7 @@ const router = createBrowserRouter([
     element: <View_posts_update/>
   },
   {
-    path: '/delete_post/:id',
+    path: '/delete_post/:postId',
     element: <View_posts_delete/>
   }
 ]);

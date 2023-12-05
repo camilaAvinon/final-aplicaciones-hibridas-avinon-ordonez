@@ -9,8 +9,7 @@ const Login_form = () => {
   const { login } = useUserContext()
   //const navigate = useNavigate()
 
-  const  handlerSubmit = async (event) => {
-    event.preventDefault()
+  const  handlerSubmit = async () => {
     try {
       const response = await fetch("http://localhost:2026/blog/authentication", {
         method: "POST",
@@ -20,7 +19,6 @@ const Login_form = () => {
         body: JSON.stringify({email, password})
       })
       if (response.ok){
-        console.log('entré')
         const data = await response.json();
         const token = data.token
         const userId = data.userId

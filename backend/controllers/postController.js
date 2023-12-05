@@ -5,16 +5,27 @@ exports.create = async(req, res) => {
     try {
         // Validaciones
         const { title, body, userId, categoryId } = new postModel( req.body );
+        console.log(title)
+        console.log(body)
+        console.log(userId)
+        console.log(categoryId)
         if ( !title || !body || !userId || !categoryId ){
-            res.status(400).json({msg: 'Se enviaron campos vacios.'});
+            console.log('campos vacíos')
+            // res.status(400).json({msg: 'Se enviaron campos vacios.'});
         } else if (typeof title != 'string'){
-            res.status(400).json({msg: 'El titulo ingresado no es valido.'});
+            // res.status(400).json({msg: 'El titulo ingresado no es valido.'});
+            console.log('titulo no valido')
         } else if (typeof body != 'string'){
-            res.status(400).json({msg: 'El cuerpo del posteo ingresado no es valido.'});
+            // res.status(400).json({msg: 'El cuerpo del posteo ingresado no es valido.'});
+            console.log('body no valido')
         } else if (userId.lenght <12){
-            res.status(400).json({msg: 'El ID de usuario no es valido.'});
+            // res.status(400).json({msg: 'El ID de usuario no es valido.'});
+            console.log('userId no valido')
+
         } else if (categoryId.lenght <12){
-            res.status(400).json({msg: 'El ID de la categoria no es valido.'});
+            console.log('categoryId no valido')
+
+            // res.status(400).json({msg: 'El ID de la categoria no es valido.'});
         }
         const newPost = new postModel({
             title: title,

@@ -12,20 +12,27 @@ function Component() {
   const [category, setCategory] = useState()
 
   let userId = localStorage.getItem('userId')
+  console.log(userId)
   let token = localStorage.getItem('token')
   const handlerSubmit = async (event) => {
+    event.preventDefault()
     try {
       const response = await fetch("http://localhost:2026/blog/posts", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({title, body, category, userId, token})
+        
+        body: JSON.stringify({title, body, userId, category})
       })
       if (response.ok){
+        console.log(title)
+        console.log(body)
+        console.log(userId)
+        console.log(category)
         const data = await response.json();
         const token = data.token
-        const userName = data.name
+        const userId = data.userId
         localStorage.setItem("token", token)
         localStorage.setItem("userId", userId)   
       }
