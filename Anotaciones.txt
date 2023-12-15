@@ -1,0 +1,9 @@
+Para arreglar
+Que se cierre el modal una vez que se hizo la accion
+Modal delete o que devuelva al inicio, o muestre mensaje de feedback
+Que cuando cree el posteo el modal se cierre
+Cuando se loguee vaya a su cuenta o al inicio
+
+Para hacer
+Modificar posteo
+Mostrar mensajes de feedback

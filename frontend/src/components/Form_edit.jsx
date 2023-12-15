@@ -81,13 +81,13 @@ const Form_edit = (postId) => {
         <div className="mb-2 block">
           <Label htmlFor="title" value="Título" />
         </div>
-        <TextInput id="title" value={post.title} onChange={(e)=>setTitle(e.value)} placeholder="Mi título" required />
+        <TextInput id="title" value={post.title} onChange={(e) => setTitle(e.target.value)} placeholder="Mi título" required />
       </div>
       <div>
         <div className="mb-2 block">
           <Label htmlFor="body" value="Cuerpo del posteo" />
         </div>
-        <Textarea id="body" value={post.body} onChange={(e)=>setBody(e.value)} required />
+        <Textarea id="body" value={post.body} onChange={(e)=>setBody(e.target.value)} required />
       </div>
       <div>
         <div className="mb-2 block">
