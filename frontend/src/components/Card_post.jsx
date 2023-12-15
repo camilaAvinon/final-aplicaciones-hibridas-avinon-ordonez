@@ -33,6 +33,7 @@ function Card_post() {
               <p className='font-normal text-gray-700 dark:text-gray-400'>{post.body}</p>
               <button className='bg-primary rounded p-1'>Ver más</button>
               <Link to={`/delete_post/${post._id}`}>Eliminar</Link>
+              <Link to={`/update_post/${post._id}`}>Editar</Link>
           </Card>
         ))
       }

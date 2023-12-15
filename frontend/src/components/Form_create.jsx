@@ -12,7 +12,6 @@ const Form_create = () => {
   const handlerSubmit = async (event) => {
     event.preventDefault()
     try {
-      onsole.log('entre')
       const response = await fetch("http://localhost:2026/blog/posts", {
         method: "POST",
         headers: {
@@ -20,7 +19,6 @@ const Form_create = () => {
         },
         body: JSON.stringify({title, body, category})
       })
-      
       if (response.ok){
         const data = await response.json();
         const token = data.token

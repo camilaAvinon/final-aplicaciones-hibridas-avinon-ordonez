@@ -68,7 +68,6 @@ function Component() {
       <Modal show={openModal} size="lg" popup onClose={() => setOpenModal(false)}>
         <Modal.Header />
         <Modal.Body>
-
           <div className="space-y-6">
             <form action="">
               <h3 className="text-2xl font-medium text-gray-900 dark:text-white">Crear nuevo posteo</h3>

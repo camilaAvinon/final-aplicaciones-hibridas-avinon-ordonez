@@ -1,10 +1,17 @@
 import React from 'react'
-import Form_edit from '../components/Form_edit'
+import { Form_edit } from '../components'
+import { useParams } from 'react-router-dom'
+import { Nav } from '../components'
+import styles from '../style'
+
 const View_posts_update = () => {
+  let {postId} = useParams()
   return (
-    <div>
-      <h2>Editar Posteo</h2>
-      <Form_edit/>
+    <div className={`w-full overflow-hidden`}>
+      <div className={` bg-primary ${styles.boxWidth}`}>
+        <Nav/>
+      </div>
+      <Form_edit postId={postId} />
     </div>
   )
 }

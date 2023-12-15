@@ -34,7 +34,7 @@ const router = createBrowserRouter([
     element: <View_posts_create/>
   },
   {
-    path: '/update_post',
+    path: '/update_post/:postId',
     element: <View_posts_update/>
   },
   {

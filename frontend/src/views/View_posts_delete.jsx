@@ -1,13 +1,17 @@
 import React from 'react'
 import { Form_delete } from '../components'
 import { useParams } from 'react-router-dom'
+import { Nav } from "../components"
+import styles from "../style"
 
 const View_posts_delete = () => {
   let {postId} = useParams()
   return (
-    <div>
-        <h2>Borrar posteo</h2>
-        <Form_delete postId={postId} />
+    <div className={`w-full overflow-hidden`}>
+      <div className={` bg-primary ${styles.boxWidth}`}>
+        <Nav/>
+      </div>
+      <Form_delete postId={postId} />
     </div>
   )
 }

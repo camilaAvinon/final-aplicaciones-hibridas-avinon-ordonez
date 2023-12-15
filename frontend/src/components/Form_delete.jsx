@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, useParams } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 
 const Form_delete = (postId) => {
   const id = postId.postId;
@@ -24,10 +24,11 @@ const Form_delete = (postId) => {
     }
   }
   return (
-    <div>
-        <form action="">
+    <div className=" flex flex-col justify-center items-center">
+        <form action="" className="flex max-w-md flex-col gap-4 justify-center w-full">
+          <h1>¿Estás seguro que querés borrar este posteo?</h1>
             <button onClick={handlerSubmit} className='bg-primary rounded p-1' type='submit'>Borrar posteo</button>
-            <Link to={`/home`}  className='text-xl text-tertiary'>Back</Link>
+            <Link to={`/home`}  className='text-xl text-tertiary'>Volver</Link>
         </form>
     </div>
   )
