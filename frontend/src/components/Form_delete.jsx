@@ -2,7 +2,6 @@ import React from 'react'
 import { Link, useParams } from 'react-router-dom';
 
 const Form_delete = (postId) => {
-  // let {postId} = useParams()
   const id = postId.postId;
   let token = localStorage.getItem('token')
   const handlerSubmit = async (event) => {

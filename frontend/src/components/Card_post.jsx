@@ -2,8 +2,7 @@ import React, {useEffect, useState} from 'react'
 import { Card, Button } from 'flowbite-react';
 import { Link } from 'react-router-dom';
 
-function Card_post(){
-
+function Card_post() {
   const [posts, setPosts] = useState(null)
   useEffect(() => {
     callingPosts();
@@ -32,9 +31,7 @@ function Card_post(){
           <Card key={post._id} className="max-w-sm mb-[2em]">
               <h5 className='text-2xl font-bold tracking-tight text-gray-900 dark:text-white'>{post.title}</h5>
               <p className='font-normal text-gray-700 dark:text-gray-400'>{post.body}</p>
-              <button className='bg-primary rounded p-1'>
-              Read more
-              </button>
+              <button className='bg-primary rounded p-1'>Ver más</button>
               <Link to={`/delete_post/${post._id}`}>Eliminar</Link>
           </Card>
         ))

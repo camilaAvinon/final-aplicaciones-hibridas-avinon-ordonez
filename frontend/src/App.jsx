@@ -11,7 +11,7 @@ const App = () => {
     </div>
     <div className='bg-secondary'>
       <div className={` ${styles.padding} ml-[4.5em]`}>
-        <h2 className={`text-5xl text-tertiary `}>Ultimos posteos!</h2>
+        <h2 className={`text-5xl text-tertiary `}>¡Últimos posteos!</h2>
       </div>
       <div className={`${styles.paddingX} flex flex-wrap justify-evenly`}>
         <Card_post />

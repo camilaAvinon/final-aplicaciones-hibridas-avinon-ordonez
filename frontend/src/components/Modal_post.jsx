@@ -1,6 +1,6 @@
 'use client';
 
-import { Button, Checkbox, Label, Modal, TextInput, Select, Textarea } from 'flowbite-react';
+import { Button, Label, Modal, TextInput, Select, Textarea } from 'flowbite-react';
 import React, { useRef, useState, useEffect} from 'react';
 import { useUserContext } from './UserContext';
 
@@ -12,7 +12,6 @@ function Component() {
   const [category, setCategory] = useState()
 
   let userId = localStorage.getItem('userId')
-  console.log(userId)
   let token = localStorage.getItem('token')
   const handlerSubmit = async (event) => {
     event.preventDefault()
@@ -26,10 +25,6 @@ function Component() {
         body: JSON.stringify({title, body, userId, category})
       })
       if (response.ok){
-        console.log(title)
-        console.log(body)
-        console.log(userId)
-        console.log(category)
         const data = await response.json();
         const token = data.token
         const userId = data.userId
