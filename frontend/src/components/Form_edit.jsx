@@ -2,6 +2,7 @@
 import { Button, Label, TextInput, Select, Textarea } from 'flowbite-react';
 import React, { useState, useEffect } from 'react';
 
+
 const Form_edit = (postId) => {
   const id = postId.postId;
   const [categories, setCategories] = useState(null)
@@ -17,13 +18,9 @@ const Form_edit = (postId) => {
   const callingPosts = async () => {
     try {
       const response = await fetch(`http://localhost:2026/blog/posts/${id}`)
-      if (response.ok) {
         const data = await response.json()
         console.log('entré')
         setPost(data.data)
-      } else {
-        console.error(response.status,response.statusText);
-      }
     } catch (error) {
       console.log(error);
     }
@@ -51,9 +48,10 @@ const Form_edit = (postId) => {
     return <p>Obteniendo datos del servidor...</p>
   }
 
-  const handlerSubmit = async () => {
+  const handlerSubmit = async (event) => {
+    event.preventDefault()
     try {
-      const response = await fetch("http://localhost:2026/blog/posts", {
+      const response = await fetch(`http://localhost:2026/blog/posts/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -81,17 +79,17 @@ const Form_edit = (postId) => {
         <div className="mb-2 block">
           <Label htmlFor="title" value="Título" />
         </div>
-        <TextInput id="title" value={post.title} onChange={(e) => setTitle(e.target.value)} placeholder="Mi título" required />
+        <TextInput id="title" defaultValue={post.title} onChange={(e) => setTitle(e.target.value)} placeholder="Mi título" required />
       </div>
       <div>
         <div className="mb-2 block">
           <Label htmlFor="body" value="Cuerpo del posteo" />
         </div>
-        <Textarea id="body" value={post.body} onChange={(e)=>setBody(e.target.value)} required />
+        <Textarea id="body" defaultValue={post.body} onChange={(e)=>setBody(e.target.value)} required />
       </div>
       <div>
         <div className="mb-2 block">
-          <Label htmlFor="body" value="Cuerpo del posteo" />
+          <Label htmlFor="body" defaultValue="Cuerpo del posteo" />
         </div>
         <Select>
           {
@@ -102,7 +100,7 @@ const Form_edit = (postId) => {
         </Select>
       </div>
       <div className="w-full">
-        <Button onClick={handlerSubmit} type='submit'>Crear posteo</Button>
+        <Button onClick={handlerSubmit} type='submit'>Actualizar posteo</Button>
       </div>
     </form>
   </div>

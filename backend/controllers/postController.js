@@ -54,15 +54,20 @@ exports.update = async(req, res) => {
         const { postId } = req.params;
         // Validaciones
         if ( !post.title || !post.body || !post.userId || !post.categoryId ){
-            res.status(400).json( { msg: 'Se enviaron campos vacios'});
+            console.log('campos vacios')
+            // res.status(400).json( { msg: 'Se enviaron campos vacios'});
         } else if (typeof post.title != 'string'){
-            res.status(400).json({msg: 'El titulo ingresado no es valido.'});
+            console.log('Titulo no valido')
+            // res.status(400).json({msg: 'El titulo ingresado no es valido.'});
         } else if (typeof post.body != 'string'){
-            res.status(400).json({msg: 'El cuerpo del posteo ingresado no es valido.'});
-        } else if (typeof post.userId != 'string' || post.userId.lenght <12){
-            res.status(400).json({msg: 'El ID de usuario no es valido.'});
-        } else if (typeof post.categoryId != 'string' || post.categoryId.lenght <12){
-            res.status(400).json({msg: 'El ID de la categoria no es valido.'});
+            console.log('el body no es string')
+            // res.status(400).json({msg: 'El cuerpo del posteo ingresado no es valido.'});
+        } else if (post.userId.lenght <12){
+            console.log('el user id es menor a 12')
+            // res.status(400).json({msg: 'El ID de usuario no es valido.'});
+        } else if (post.categoryId.lenght <12){
+            console.log('el category id es menor a 12')
+            // res.status(400).json({msg: 'El ID de la categoria no es valido.'});
         }
         const filter = { _id: postId };
         const data = {

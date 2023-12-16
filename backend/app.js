@@ -69,9 +69,9 @@ app.get('/blog/posts', postController.call);
 app.get('/blog/posts/:postId', postController.callById);
 
 // Rutas protegidas de posteos
-app.post('/blog/posts', postController.create);
+app.post('/blog/posts', validatingToken, postController.create);
 app.put('/blog/posts/:postId', validatingToken, postController.update);
-app.delete('/blog/posts/:postId', postController.delete);
+app.delete('/blog/posts/:postId', validatingToken, postController.delete);
 
 //Rutas comentarios
 app.get('/blog/comments', commentController.call);

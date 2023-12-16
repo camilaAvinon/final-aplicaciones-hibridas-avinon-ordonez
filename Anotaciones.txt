@@ -5,5 +5,4 @@ Que cuando cree el posteo el modal se cierre
 Cuando se loguee vaya a su cuenta o al inicio
 
 Para hacer
-Modificar posteo
 Mostrar mensajes de feedback
