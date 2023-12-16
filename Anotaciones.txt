@@ -1,5 +1,6 @@
 Para arreglar
 Que cuando cree el posteo el modal se cierre
+Estilizar el sitio
 
 Para hacer
 Mostrar mensajes de feedback

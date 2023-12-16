@@ -8,9 +8,7 @@ import { Link } from 'react-router-dom';
 const Nav = () => {
   return (
     <Navbar fluid rounded className={`w-full bg-primary ${styles.paddingY}`}>
-      <Navbar.Brand>
-        <Link to={`/home`} className="self-center whitespace-nowrap text-3xl font-semibold dark:text-white">Blogify</Link>
-      </Navbar.Brand>
+      <Link to={`/home`} className="self-center whitespace-nowrap text-3xl font-semibold dark:text-white">Blogify</Link>
       <div className="flex md:order-2">
         <Dropdown 
           arrowIcon={false}
