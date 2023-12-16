@@ -1,13 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button, Label, TextInput } from 'flowbite-react';
-import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Signup_form = () => {
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
+    const navigate = useNavigate()
 
-    const handlerSubmit = async () => {
+    const handlerSubmit = async (event) => {
+        event.preventDefault()
         try {
             await fetch ('http://localhost:2026/blog/users', {
                 method: 'POST',
@@ -16,6 +18,7 @@ const Signup_form = () => {
             },
             body: JSON.stringify({name, email, password}),
             });
+            navigate('/home')
         } catch (e){
             console.log(e);
         }

@@ -1,6 +1,8 @@
 
 import { Button, Label, TextInput, Select, Textarea } from 'flowbite-react';
 import React, { useState, useEffect } from 'react';
+import {Link, Routes, Route, useNavigate} from 'react-router-dom';
+
 
 
 const Form_edit = (postId) => {
@@ -10,6 +12,7 @@ const Form_edit = (postId) => {
   const [title, setTitle] = useState()
   const [body, setBody] = useState()
   const [category, setCategory] = useState()
+  const navigate = useNavigate()
 
   useEffect(() => {
     callingPosts();
@@ -19,7 +22,6 @@ const Form_edit = (postId) => {
     try {
       const response = await fetch(`http://localhost:2026/blog/posts/${id}`)
         const data = await response.json()
-        console.log('entré')
         setPost(data.data)
     } catch (error) {
       console.log(error);
@@ -64,8 +66,8 @@ const Form_edit = (postId) => {
         const userName = data.name
         localStorage.setItem("token", token)
         localStorage.setItem("userName", userName)
-        login({userName : userName})
       }
+      navigate('/home');
     } catch(e){
       console.error(e);
     }

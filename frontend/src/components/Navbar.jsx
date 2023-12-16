@@ -3,13 +3,13 @@ import { Avatar, Dropdown, Navbar } from 'flowbite-react';
 import styles from '../style';
 import { Link } from 'react-router-dom';
 
+//Llamar al usuario para hacer el dropdown
 
 const Nav = () => {
   return (
     <Navbar fluid rounded className={`w-full bg-primary ${styles.paddingY}`}>
-      <Navbar.Brand href="https://flowbite-react.com">
-        {/* <img src="/favicon.svg" className="mr-3 h-6 sm:h-9" alt="Flowbite React Logo" /> */}
-        <span className="self-center whitespace-nowrap text-3xl font-semibold dark:text-white">Blogify</span>
+      <Navbar.Brand>
+        <Link to={`/home`} className="self-center whitespace-nowrap text-3xl font-semibold dark:text-white">Blogify</Link>
       </Navbar.Brand>
       <div className="flex md:order-2">
         <Dropdown 

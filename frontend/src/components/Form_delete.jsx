@@ -1,7 +1,8 @@
 import React from 'react'
-import { Link, Navigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Form_delete = (postId) => {
+  const navigate = useNavigate()
   const id = postId.postId;
   let token = localStorage.getItem('token')
   const handlerSubmit = async (event) => {
@@ -19,6 +20,7 @@ const Form_delete = (postId) => {
         const token = data.token
         localStorage.setItem("token", token)
       }
+      navigate('/home')
     } catch(e){
       console.error(e);
     }

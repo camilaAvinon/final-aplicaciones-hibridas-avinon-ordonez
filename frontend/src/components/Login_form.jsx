@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-//import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Button, Label, TextInput } from 'flowbite-react'
 import { useUserContext } from './UserContext'
 
@@ -7,9 +7,10 @@ const Login_form = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const { login } = useUserContext()
-  //const navigate = useNavigate()
+  const navigate = useNavigate()
 
-  const  handlerSubmit = async () => {
+  const  handlerSubmit = async (event) => {
+    event.preventDefault()
     try {
       const response = await fetch("http://localhost:2026/blog/authentication", {
         method: "POST",
@@ -26,8 +27,8 @@ const Login_form = () => {
         localStorage.setItem("token", token)
         localStorage.setItem("userId", userId)
         login({userId : userId})
-        //navigate('/panel)        
       }
+      navigate('/home')        
     } catch(e){
       console.error(e);
     }

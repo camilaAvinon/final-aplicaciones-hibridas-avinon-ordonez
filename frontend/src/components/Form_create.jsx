@@ -26,7 +26,7 @@ const Form_create = () => {
         localStorage.setItem("token", token)
         localStorage.setItem("userName", userName)
         login({userName : userName})
-        navigate('/login')        
+        navigate('/home')      
       }
     } catch(e){
       console.error(e);
