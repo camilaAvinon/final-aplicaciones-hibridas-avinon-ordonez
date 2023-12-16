@@ -1,5 +1,4 @@
 Para arreglar
-Que se cierre el modal una vez que se hizo la accion
 Que cuando cree el posteo el modal se cierre
 
 Para hacer
