@@ -9,7 +9,7 @@ const Nav = () => {
   return (
     <Navbar fluid rounded className={`w-full bg-primary ${styles.paddingY}`}>
       <Link to={`/home`} className="self-center whitespace-nowrap text-3xl font-semibold dark:text-white">Blogify</Link>
-      <div className="flex md:order-2">
+      {/* <div className="flex md:order-2">
         <Dropdown 
           arrowIcon={false}
           inline
@@ -28,7 +28,7 @@ const Nav = () => {
           <Dropdown.Item>Sign out</Dropdown.Item>
         </Dropdown>
         <Navbar.Toggle />
-      </div>
+      </div> */}
       <Navbar.Collapse>
         <Link to={`/home`}  className='text-xl text-tertiary'>Home</Link>
         <Link to={`/login`} className='text-xl text-tertiary'>Iniciar sesión</Link>
